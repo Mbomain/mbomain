@@ -53,11 +53,7 @@
 
 ## 🐍 Contribution Snake Animation
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mbomain/mbomain/output/snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/mbomain/mbomain/output/snake-light.svg">
-  <img alt="Contribution Snake" src="https://raw.githubusercontent.com/mbomain/mbomain/output/snake-dark.svg">
-</picture>
+![Contribution Snake](https://raw.githubusercontent.com/mbomain/mbomain/output/snake.svg)
 
 ###
 
