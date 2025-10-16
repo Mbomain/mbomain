@@ -1,4 +1,4 @@
-name: Generate Snake Animation 🐍
+name: 🐍 Generate Snake Animation
 
 on:
   schedule:
@@ -7,41 +7,57 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'README.md'
+      - '.github/workflows/generate-snake.yml'
+
+concurrency:
+  group: snake-generation
+  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
 
     steps:
-      - name: Checkout repository
+      - name: 📥 Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Configure Git for commits
+      - name: ⚙️ Configure Git
         run: |
-          git config --global user.name "Maimble Bot"
+          git config --global user.name "🤖 Maimble Bot"
           git config --global user.email "ma.andriamparani@gmail.com"
 
-      - name: Add fake commits for snake
-        run: |
-          echo "Update for snake $(date)" >> fake.txt
-          for i in {1..5}; do
-            echo "Extra line $i" >> fake.txt
-            git add fake.txt
-            git commit -m "Fake commit $i for snake $(date)" || echo "No changes to commit"
-          done
-
-      - name: Generate snake in dark and light mode
+      - name: 🎨 Generate Snake Animation
         uses: Platane/snk@v3
         with:
           github_user_name: mbomain
           outputs: |
-            dist/snake-dark.svg?palette=github-dark
-            dist/snake-light.svg?palette=github-light
+            dist/snake.svg?palette=github-dark&height=90
+          svg_out_size: 300x90
 
-      - name: Push snake animation
+      - name: 🚀 Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
           build_dir: dist
+          keep_history: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: ✅ Workflow Status
+        if: success()
+        run: |
+          echo "✨ Snake animation generated successfully!"
+          echo "📍 View at: https://raw.githubusercontent.com/mbomain/mbomain/output/snake.svg"
+
+      - name: ❌ Workflow Failed
+        if: failure()
+        run: |
+          echo "⚠️ Snake generation failed. Check logs above."
+          exit 1
