@@ -62,6 +62,4 @@
 
 <br clear="both">
 
-![GitHub Contributions](https://github.com/mbomain.png?size=200)
-
 ###
