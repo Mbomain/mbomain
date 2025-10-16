@@ -69,11 +69,3 @@
 <br clear="both">
 
 ###
-
-###
-
-## 🐍 Contribution Snake Animation
-
-![Contribution Snake](https://raw.githubusercontent.com/mbomain/mbomain/output/snake.svg)
-
-###
