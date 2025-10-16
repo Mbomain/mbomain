@@ -49,6 +49,16 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" height="30" alt="c logo"  />
 </div>
 
+###
+
+## 🐍 Contribution Snake Animation
+
+![Contribution Snake](https://raw.githubusercontent.com/mbomain/mbomain/output/snake.svg)
+
+<br>
+
+###
+
 <div align="left">
   <a href="https://www.youtube.com/channel/YOUR_CHANNEL">
     <img src="https://img.shields.io/static/v1?message=Youtube&logo=youtube&label=&color=FF0000&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="youtube logo"  />
@@ -67,13 +77,5 @@
 ###
 
 <br clear="both">
-
-###
-
-###
-
-## 🐍 Contribution Snake Animation
-
-![Contribution Snake](https://raw.githubusercontent.com/mbomain/mbomain/output/snake.svg)
 
 ###
